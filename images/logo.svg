@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">Techfor e Team Logo</title>
+  <desc id="logoDesc">A geometric monogram with layered arcs</desc>
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f8a7a"/>
+      <stop offset="100%" stop-color="#1269d3"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="104" height="104" rx="26" fill="#081726"/>
+  <path d="M31 30h57v15H47v13h34v15H47v17H31V30z" fill="url(#g1)"/>
+  <path d="M63 30h26v15H63z" fill="#ff7a18"/>
+</svg>

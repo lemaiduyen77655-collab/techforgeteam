@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technical Compliance Guide 2026 | Techfor e Team</title>
+  <meta name="description" content="2026 technical compliance execution guide for Apple App Store, Google Play, data residency, anti-fraud controls, UX compliance patterns, and periodic legal review." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://techforgeteam.com/compliance-guide.html" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="topbar"><div class="container"><span>Team Name: techforgeteam.com</span><span>Business Support: support@techforgeteam.com | Contact: contact@techforgeteam.com</span></div></div>
+  <header>
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html"><img src="images/logo.svg" alt="Techfor e Team logo" /><span>TECHFOR E TEAM</span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Business Services</a>
+        <a href="advantages.html">Team Advantages</a>
+        <a href="news.html">Team Updates</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container section-head reveal">
+        <h1>2026 Technical Compliance Execution Guide</h1>
+        <p>This guide consolidates Apple App Store and Google Play policy requirements, regional data sovereignty obligations, interaction compliance controls, and risk management routines for practical global operations.</p>
+      </div>
+      <div class="container legal-layout">
+        <aside class="legal-nav">
+          <strong>Guide Contents</strong>
+          <a href="#c1">1. Apple App Store (iOS)</a>
+          <a href="#c2">2. Google Play (Android)</a>
+          <a href="#c3">3. Data Residency Compliance</a>
+          <a href="#c4">4. Interaction Design Compliance</a>
+          <a href="#c5">5. Risk Control Measures</a>
+          <a href="#c6">6. Periodic Review (Every 6 Months)</a>
+        </aside>
+        <article class="legal-content reveal">
+          <h2 id="c1">1. Apple App Store (iOS) - 2026 Requirements</h2>
+          <ul>
+            <li>Privacy Labels: app backend metadata must accurately disclose collection categories, purpose, and third-party sharing. If data is linked to user profiles (for example IDFA and purchase behavior), declarations must explicitly reflect that linkage under Apple policy fields.</li>
+            <li>ATT enforcement:
+              <ul>
+                <li>Before accessing IDFA/device-level tracking identifiers, call requestTrackingAuthorization and show a clear purpose explanation.</li>
+                <li>If user declines, propagate non-tracking flags (for example allow_tracking = false) to all relevant third-party SDKs.</li>
+                <li>Under iOS 18 practical constraints, avoid repeated disruptive ATT prompts; guide users to system settings if they later change consent.</li>
+                <li>No ATT circumvention via alternative identifiers or covert fingerprinting substitutes.</li>
+              </ul>
+            </li>
+            <li>Additional iOS controls:
+              <ul>
+                <li>No hidden functionality, no review circumvention logic, no undisclosed payment pathways.</li>
+                <li>Sensitive permissions (photos/contacts/location) require contextual purpose prompts and user-driven consent.</li>
+                <li>IAP entries must clearly display price and cycle to avoid deceptive conversion patterns.</li>
+                <li>If AI-generated content exists, App Store listing should include compliant disclosures.</li>
+              </ul>
+            </li>
+          </ul>
+
+          <h2 id="c2">2. Google Play (Android) - 2026 Requirements</h2>
+          <ul>
+            <li>Data safety form: accurately declare encrypted transport (HTTPS/TLS) and at-rest security controls (for example AES-256 class storage safeguards where applicable), plus data purpose and sharing boundaries.</li>
+            <li>SDK transparency and accountability:
+              <ul>
+                <li>Developers are responsible for all integrated SDK behavior.</li>
+                <li>Use modern SDK versions with Android 14+ privacy compatibility and updated security maintenance.</li>
+                <li>Publish third-party SDK inventory and purpose declarations in store compliance materials.</li>
+                <li>For Android 15 adaptation, avoid requesting unrelated permissions and support privacy-preserving user workflows.</li>
+              </ul>
+            </li>
+            <li>Android 15 operational adaptation examples:
+              <ul>
+                <li>Support sensitive-content shielding where screen sharing/recording is active.</li>
+                <li>Adhere to private space behavior expectations when product category requires special messaging.</li>
+                <li>Maintain 64-bit compatibility and modern ABI support.</li>
+                <li>Subscription apps must expose clear cancellation entry points.</li>
+              </ul>
+            </li>
+            <li>Advertising policy controls: no malicious ad code, no forced clicks, no deceptive ad overlays, and compliant implementation of app open ads, rewarded videos, interstitials, and banners.</li>
+          </ul>
+
+          <h2 id="c3">3. 2026 Data Residency Compliance</h2>
+          <ul>
+            <li>Where local law requires localization (for example China, India, Saudi Arabia, Brazil, EU scenarios, Canada in designated conditions), user data may need domestic/region-specific storage with controlled transfer channels.</li>
+            <li>Cross-border transfer must rely on lawful mechanisms: adequacy decisions, SCC-style contractual tools, security assessments, or regulator approvals depending on jurisdiction.</li>
+            <li>For U.S.-facing operations, manage trade and regulatory obligations, including lawful response procedures for official requests.</li>
+            <li>Continuously monitor newly tightened localization regimes (including evolving rules in Canada, Japan, and other countries introducing stricter sovereignty controls).</li>
+            <li>Maintain data-residency ledgers documenting data location, transfer routes, legal basis, and review outcomes for audits.</li>
+          </ul>
+
+          <h2 id="c4">4. Interaction Design Suggestions For Compliance</h2>
+          <ul>
+            <li>Double confirmation for high-value IAP (for example >= USD/EUR 50): show in-app second-step confirmation including item, amount, and payment route before store checkout handoff.</li>
+            <li>Double confirmation for auto-renew subscriptions: user confirms cycle, price, and renewal rules before final consent.</li>
+            <li>Mandatory privacy policy reachability in three locations:
+              <ul>
+                <li>App store listing details page.</li>
+                <li>Launch/splash or login stage with visible consent choices and clear user control.</li>
+                <li>In-app Settings/About persistent entry.</li>
+              </ul>
+            </li>
+            <li>Permission prompts must state purpose; no forced consent and no default hidden authorization.</li>
+            <li>Rewarded ads should clearly state "Watch full ad to receive reward" and include compliant skip behavior according to platform policy and ad format rules.</li>
+            <li>Provide complaint channels for privacy, ads, and UGC issues with documented response targets (typically within 7 business days).</li>
+            <li>Display transparency summaries for ad logic, recommendation principles, and data process overview to align with DSA transparency expectations.</li>
+            <li>When screen sharing or casting is active (especially Android 15 contexts), show prominent status indicators and quick stop action.</li>
+          </ul>
+
+          <h2 id="c5">5. Compliance Risk Prevention Measures</h2>
+          <ul>
+            <li>Pre-release compliance checks for code paths, policy texts, SDK inventory, and UX flows.</li>
+            <li>Dedicated legal-policy monitoring for global updates (U.S. states, EU DSA, iOS/Android policy shifts).</li>
+            <li>Third-party partner governance: periodic due diligence of ad networks, SDK suppliers, attribution systems, and payment partners.</li>
+            <li>User rights workflow: implement auditable handling for access, correction, deletion, and complaints.</li>
+            <li>Security controls: encrypted storage, encrypted transport, access control, anomaly monitoring, and periodic security testing.</li>
+            <li>Employee training for engineering, operations, and support teams on privacy, anti-fraud, and store policy implementation.</li>
+          </ul>
+
+          <h2 id="c6">6. Periodic Review Requirements (Recommended Every 6 Months)</h2>
+          <p>Due to continuous legal and platform changes, conduct a formal compliance review every 6 months including:</p>
+          <ul>
+            <li>Agreement updates: verify privacy, terms, and compliance guide clauses against latest law and store policy changes.</li>
+            <li>Application compliance: verify SDK versions, ATT handling, Android/iOS adaptation, and UX consent paths.</li>
+            <li>Data governance: verify collection/storage/transfer/sharing logic and residency obligations by region.</li>
+            <li>Anti-fraud effectiveness: update ad/IAP anti-fraud rules against newly observed abuse patterns.</li>
+            <li>User request operations: audit timeliness and quality of rights request handling and improve operational workflows.</li>
+          </ul>
+          <p>For questions, reports, or legal feedback contact: <a href="mailto:contact@techforgeteam.com">contact@techforgeteam.com</a>. Address: Hoa Lac Hi-Tech Park, Hanoi, Vietnam.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><h3>techforgeteam.com</h3><p>Address: Hoa Lac Hi-Tech Park, Hanoi, Vietnam.</p></div>
+      <div><h4>Core Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Business Services</a></li><li><a href="advantages.html">Team Advantages</a></li><li><a href="news.html">Team Updates</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li><li><a href="compliance-guide.html">Technical Compliance Guide 2026</a></li></ul></div>
+    </div>
+    <div class="container copyright">Copyright <span data-year></span> techforgeteam.com. All rights reserved.</div>
+  </footer>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
